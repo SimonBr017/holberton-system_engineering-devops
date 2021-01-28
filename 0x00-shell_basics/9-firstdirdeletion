@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -r /temp/holberton
+rmdir /temp/holberton
