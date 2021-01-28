@@ -1,1 +1,2 @@
-#!/bin/bash mv [A-Z]* /tmp/u \n
+#!/bin/bash
+mv [A-Z]* /tmp/u
