@@ -1,2 +1,2 @@
 #!/bin/bash
-ead /etc/passwd
+head /etc/passwd
