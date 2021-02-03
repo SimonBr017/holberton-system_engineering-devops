@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lra | grep ^d | wc -l
+ls -lra | find -type d ! -iname "." | wc -l
