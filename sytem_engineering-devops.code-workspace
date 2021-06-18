@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "0x02-shell_redirections"
+		},
+		{
+			"path": "0x04-loops_conditions_and_parsing"
 		}
 	]
 }
