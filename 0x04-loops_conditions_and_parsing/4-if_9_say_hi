@@ -8,6 +8,6 @@ do
     then
         echo "Hi"
     fi
-    echo "Holberton School"
-    (( i++ ))
+        echo "Holberton School"
+        (( i++ ))
 done
