@@ -18,3 +18,9 @@ On a whiteboard, design of a one server web infrastructure that hosts the websit
     1 load-balancer (HAproxy)
     1 set of application files (your code base)
     1 database (MySQL)
+
+2-secured_and_monitored_web_infrastructure: a three server web infrastructure that hosts the website www.foobar.com, it must be secured, serve encrypted traffic, and be monitored.
+
+    3 firewalls
+    1 SSL certificate to serve www.foobar.com over HTTPS
+    3 monitoring clients (data collector for Sumologic or other monitoring services)
