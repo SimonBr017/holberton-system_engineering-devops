@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2154
 # install nginx on our server with custom response header
 
 sudo apt -y update
 sudo apt -y install nginx
-echo 'Holberton School for the win!' | sudo tee /var/www/html/index.nginx-debian.html
-sudo sed -i '/listen 80 default_server;/a \\\n\tadd_header X-Served-By $hostname;' /etc/nginx/sites-enabled/default
+HOSTNAME=$(cat /etc/hostname)
+sudo sed -i "/listen 80 default_server;/a \\\n\tadd_header X-Served-By \"$HOSTNAME\";" /etc/nginx/sites-enabled/default
 sudo service nginx start
