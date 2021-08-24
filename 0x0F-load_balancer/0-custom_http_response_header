@@ -4,5 +4,5 @@
 sudo apt -y update
 sudo apt -y install nginx
 echo 'Holberton School for the win!' | sudo tee /var/www/html/index.nginx-debian.html
-sudo sed -i '/listen 80 default_server;/a \\\n\tadd_header Xserved-By "\$HOSTNAME\";' /etc/nginx/sites-enabled/default
+sudo sed -i '/listen 80 default_server;/a \\\n\tadd_header Xserved-By $hostname;' /etc/nginx/sites-enabled/default
 sudo service nginx start
