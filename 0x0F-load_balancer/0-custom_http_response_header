@@ -2,8 +2,8 @@
 # shellcheck disable=SC2154
 # install nginx on our server with custom response header
 
-sudo apt -y update
-sudo apt -y install nginx
+sudo apt-get update
+sudo apt-get -y install nginx
 HOSTNAME=$(cat /etc/hostname)
-sudo sed -i "/listen 80 default_server;/a \\\n\tadd_header X-Served-By \"$HOSTNAME\";" /etc/nginx/sites-enabled/default
-sudo service nginx start
+sudo sed -i "/listen \[::\]:80 default_server;/a \\\n\tadd_header X-Served-By \"$HOSTNAME\";" /etc/nginx/sites-enabled/default
+sudo service nginx restart
