@@ -2,8 +2,8 @@
 # display information about subdomains.
 
 dom_info() {
-	DOM="$1"
-	SUB="$2"
+	DOM=$1
+	SUB=$2
 	RECORD=$(dig "$SUB.$DOM" +noall +answer | awk '{ print $4 }')
 	IP=$(dig "$SUB.$DOM" +noall +answer | awk '{ print $NF }')
 	echo "The subdomain $SUB is a $RECORD record and points to $IP"
