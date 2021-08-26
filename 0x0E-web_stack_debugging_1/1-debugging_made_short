@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# fix Nginx server to listen on 80 (symbolic link prob)
+# fix Nginx server to listen on 80
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
