@@ -2,3 +2,4 @@
 # fix Nginx server to listen on 80
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
+pkill -o nginx
