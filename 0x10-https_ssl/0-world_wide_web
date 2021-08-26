@@ -4,18 +4,18 @@
 dom_info() {
 	DOM=$1
 	SUB=$2
-	RECORD=$(dig "$SUB.$DOM" +noall +answer | awk '{ print $4 }')
-	IP=$(dig "$SUB.$DOM" +noall +answer | awk '{ print $NF }')
+	RECORD=$(dig +noall +answer "$SUB.$DOM" | awk '{ print $4 }')
+	IP=$(dig +noall +answer "$SUB.$DOM" | awk '{ print $5 }')
 	echo "The subdomain $SUB is a $RECORD record and points to $IP"
 }
 
-if [ "$#" -eq 1 ]
+if [ "$#" == 1 ]
 then
 	dom_info "$1" "www"
 	dom_info "$1" "lb-01"
 	dom_info "$1" "web-01"
 	dom_info "$1" "web-02"
-elif [ "$#" -eq 2 ]
+elif [ "$#" == 2 ]
 then
 	dom_info "$1" "$2"
 fi
