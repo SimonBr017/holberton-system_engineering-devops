@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# script to fix a given container so that Nginx is running as the nginx user.
+
+# nginx must be listening on port 8080 wiht netstat -lpn see apache2 already use it
+pkill -f apache2
+printf 'apache2 killed --OK\n\n'
+
+# up nginx to listen on port 8080
+sudo sed -i 's/80 default_server/8080 default_server/' /etc/nginx/sites-available/default
+printf 'update port 8080 --OK\n\n'
+
+# up nginx.conf file uncommant user line 2 and change www-data by nginx
+sudo sed -i 's/#user www-data/user nginx/' /etc/nginx/nginx.conf
+printf 'update user name in nginx.conf --OK\n\n'
+
+# up owner and permission on cofiguration file nginx.conf
+chown nginx:nginx /etc/nginx/nginx.conf
+printf 'update file owner --OK\n\n'
+chmod -R 700 /etc/nginx/nginx.conf
+printf 'permission updated --OK\n\n'
+
+# restart service as nginx user
+sudo -u nginx service nginx restart
+printf 'Restart nginx service --OK\n\n'
+printf 'Script over\n'
