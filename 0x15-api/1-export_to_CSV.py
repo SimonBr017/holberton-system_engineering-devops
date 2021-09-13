@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Use REST API to get data andexport to csv file"""
-from sys import argv
-import requests
-import json
 import csv
+import json
+import requests
+from sys import argv
 
 
 def main():
@@ -22,9 +22,9 @@ def main():
         file = csv.writer(file, quoting=csv.QUOTE_ALL)
         for task in todo:
             file.writerow([argv[1],
-                           user['name'],
-                           task['completed'],
-                           task['title']])
+                           user.get('name'),
+                           task.get('completed'),
+                           task.get('title')])
 
 
 if __name__ == "__main__":
