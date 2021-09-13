@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Use REST API to get data"""
-from sys import argv
-import requests
 import json
+import requests
+from sys import argv
 
 
 def main():
