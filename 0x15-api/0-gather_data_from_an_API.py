@@ -26,7 +26,7 @@ def main():
         if task.get('completed'):
             number_task_complete += 1
 
-    print("Employee {} is done with tasks({}/{})".format(user.get('username'),
+    print("Employee {} is done with tasks({}/{})".format(user.get('name'),
                                                          number_task_complete,
                                                          number_of_task))
 
