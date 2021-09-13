@@ -8,6 +8,8 @@ from sys import argv
 
 def main():
     """main function"""
+    if len(argv) < 2:
+        return
 
     user_url = "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
     todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
