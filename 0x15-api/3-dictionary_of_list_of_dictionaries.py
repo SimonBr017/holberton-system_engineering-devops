@@ -17,17 +17,15 @@ def main():
     todo = json.loads(todo_request.text)
 
     todo_all_user = {}
-    task_list = []
 
     for user in users:
-
+        task_list = []
         for task in todo:
             if task.get('userId') == user.get('id'):
                 data = {"username": user.get('username'),
                         "task": task.get('title'),
                         "completed": task.get('completed')}
                 task_list.append(data)
-
         todo_all_user[user.get('id')] = task_list
 
     with open("todo_all_employees.json", mode='w') as file:
