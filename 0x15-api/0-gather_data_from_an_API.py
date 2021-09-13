@@ -21,16 +21,16 @@ def main():
     number_task_complete = 0
 
     for task in todo:
-        if task['completed']:
+        if task.get('completed'):
             number_task_complete += 1
 
-    print("Employee {} is done with tasks({}/{})".format(user['name'],
+    print("Employee {} is done with tasks({}/{})".format(user.get('name'),
                                                          number_task_complete,
                                                          number_of_task))
 
     for task in todo:
-        if task['completed']:
-            print("\t {}".format(task['title']))
+        if task.get('completed'):
+            print("\t {}".format(task.get('title')))
 
 
 if __name__ == "__main__":
