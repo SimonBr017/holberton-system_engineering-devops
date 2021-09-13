@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+"""Use REST API to get data"""
 from sys import argv
 import requests
 import json
 
 
 def main():
+    """main function"""
 
     user_url = "https://jsonplaceholder.typicode.com/users/{}".format(argv[1])
     todo_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
