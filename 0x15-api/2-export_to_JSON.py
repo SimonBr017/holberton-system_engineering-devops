@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Use REST API to get data and export to json file"""
-from sys import argv
-import requests
 import json
+import requests
+from sys import argv
 
 
 def main():
@@ -21,8 +21,9 @@ def main():
     todo_user = {}
 
     for task in todo:
-        data = {"task": task['title'],
-                "completed": task['completed'], "username": user['name']}
+        data = {"task": task.get('title'),
+                "completed": task.get('completed'),
+                "username": user.get('name')}
         task_list.append(data)
     todo_user[argv[1]] = task_list
 
