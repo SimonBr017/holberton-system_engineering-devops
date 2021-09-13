@@ -23,7 +23,7 @@ def main():
 
         for task in todo:
             if task.get('userId') == user.get('id'):
-                data = {"username": user.get('name'),
+                data = {"username": user.get('username'),
                         "task": task.get('title'),
                         "completed": task.get('completed')}
                 task_list.append(data)

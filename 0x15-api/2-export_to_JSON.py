@@ -25,7 +25,7 @@ def main():
     for task in todo:
         data = {"task": task.get('title'),
                 "completed": task.get('completed'),
-                "username": user.get('name')}
+                "username": user.get('username')}
         task_list.append(data)
     todo_user[argv[1]] = task_list
 
