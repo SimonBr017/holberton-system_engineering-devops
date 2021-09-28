@@ -13,7 +13,7 @@ def top_ten(subreddit):
     request = requests.get(url, headers=header)
 
     if request.status_code == 404:
-        return 0
+        print(None)
 
     for child in request.json().get("data").get("children"):
         print(child.get("data").get("title"))
