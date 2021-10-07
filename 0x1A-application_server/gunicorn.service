@@ -1,6 +1,6 @@
 [Unit]
 Description=Gunicorn instance to serve gunicorn_HBNB
-After=network.target
+After=network.target airbnb_api.service
 
 [Service]
 User=ubuntu
